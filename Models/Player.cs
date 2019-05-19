@@ -3,9 +3,11 @@ namespace GolfCard2.Models
 {
   class Player
   {
-    public Player(string name)
+    public Player(string name, int handi)
     {
       Name = name;
+      Handicap = Handicap;
+
       Score1 = 0;
       Score2 = 0;
       Score3 = 0;
@@ -15,6 +17,7 @@ namespace GolfCard2.Models
 
     }
     public string Name { get; set; }
+    public int Handicap { get; set; }
     public int Score1 { get; set; }
     public int Score2 { get; set; }
     public int Score3 { get; set; }

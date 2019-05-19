@@ -17,10 +17,19 @@ namespace GolfCard2.Models
       {
 
         int userSelection = Convert.ToInt32(Console.ReadLine());
+        if (userSelection > courses.Count + 1)
+        {
+          System.Console.WriteLine("Invalid Selection");
+
+          CourseSelect(courses);
+
+
+        }
         return courses.Find(o => o.ID == userSelection);
       }
       catch
       {
+        System.Console.WriteLine("Invalid Selection");
         CourseSelect(courses);
         return null;
       }
