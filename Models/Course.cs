@@ -15,24 +15,16 @@ namespace GolfCard2.Models
       };
       try
       {
-
         int userSelection = Convert.ToInt32(Console.ReadLine());
-        if (userSelection > courses.Count + 1)
-        {
-          System.Console.WriteLine("Invalid Selection");
-
-          CourseSelect(courses);
-
-
-        }
         return courses.Find(o => o.ID == userSelection);
       }
-      catch
+      catch (System.Exception)
       {
-        System.Console.WriteLine("Invalid Selection");
-        CourseSelect(courses);
-        return null;
+
+        throw;
       }
+
+
     }
     //Constructor
     public Course(int id, string courseName, string courseAddress, int h1num, int h1par, int h1dis)
